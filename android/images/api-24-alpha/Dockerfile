@@ -5,12 +5,6 @@ FROM openjdk:8-jdk-slim
 
 LABEL maintainer="marc@circleci.com"
 
-# Skip the first line of the Dockerfile template (FROM ${BASE})
-
-# Initial Command run as `root`.
-
-ADD https://raw.githubusercontent.com/circleci/circleci-images/master/android/bin/circle-android /bin/circle-android
-RUN chmod +rx /bin/circle-android
 
 
 # make Apt n
