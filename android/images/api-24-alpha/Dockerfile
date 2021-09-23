@@ -5,17 +5,9 @@ FROM openjdk:8-jdk-slim
 
 LABEL maintainer="marc@circleci.com"
 
-# Initial Command run as `root`.
 
-ADD https://raw.githubusercontent.com/circleci/circleci-images/master/android/bin/circle-android /bin/circle-android
-RUN chmod +rx /bin/circle-android
 
-# Skip the first line of the Dockerfile template (FROM ${BASE})
-
-# make Apt non-interactive
-RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90circleci \
-  && echo 'DPkg::Options "--force-confnew";' >> /etc/apt/apt.conf.d/90circleci
-
+# make Apt n
 ENV DEBIAN_FRONTEND=noninteractive
 
 # man directory is missing in some base images
